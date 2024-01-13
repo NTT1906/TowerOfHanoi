@@ -100,11 +100,18 @@ int main(void) {
 	while(!WindowShouldClose()) {
 		BeginDrawing();
 		ClearBackground(WHITE);
-		DrawRectangleLines(loading_bar_x - loading_bar_width / 2 - 1, loading_bar_y - - loading_bar_height / 2 - 1, loading_bar_width + 2, loading_bar_height + 2, BLACK);
+		DrawRectangleLines(loading_bar_x - loading_bar_width / 2 - 1, loading_bar_y + loading_bar_height / 2 - 1, loading_bar_width + 2, loading_bar_height + 2, BLACK);
+		DrawRectangle(loading_bar_x - loading_bar_width / 2, loading_bar_y + loading_bar_height / 2, loading_bar_width * m / move, loading_bar_height, done ? GREEN : YELLOW);
+		char mStr[32];
+		sprintf(mStr, "%d", m);
+		DrawText(mStr, loading_bar_x - loading_bar_width / 2 + loading_bar_width * m / move - MeasureText(mStr, 15) / 2, loading_bar_y + loading_bar_height / 2 + loading_bar_height + 5, 15, BLACK);
 		if (!done) {
-			DrawRectangle(loading_bar_x - loading_bar_width / 2, loading_bar_y - - loading_bar_height / 2, loading_bar_width * m / move, loading_bar_height, YELLOW);
-		} else {
-			DrawRectangle(loading_bar_x - loading_bar_width / 2, loading_bar_y - - loading_bar_height / 2, loading_bar_width * m / move, loading_bar_height, GREEN);
+			sprintf(mStr, "%d", move);
+			DrawText(mStr, loading_bar_x - loading_bar_width / 2 + loading_bar_width + 1 - MeasureText(mStr, 15) / 2, loading_bar_y + loading_bar_height / 2 + loading_bar_height + 5, 15, BLACK);
+			//DrawText(mStr, loading_bar_x - loading_bar_width / 2 + loading_bar_width * m / move - MeasureText(mStr, 15) / 2, loading_bar_y + loading_bar_height / 2 + loading_bar_height + 5, 15, BLACK);
+		}
+		if (done) {
+			DrawText("DONE", loading_bar_x - loading_bar_width / 2 - 1 )
 		}
 		if (m == move) {
 			done = true;
@@ -183,8 +190,6 @@ int main(void) {
 		int debug = 0;
 		char sStep[100];
 		DrawFPS(GetRenderWidth() - 100, 0);
-		sprintf(sStep, "Move: %d", m);
-		DrawText(sStep, GetRenderWidth() - 100 - MeasureText(sStep, 20), 100, 20, BLACK);
 		sprintf(sStep, "Step: %d", step);
 		DrawText(sStep, 0, 10 * debug++, 10, BLACK);
 		sprintf(sStep, "Disk amount: %d", DISK_AMOUNT);

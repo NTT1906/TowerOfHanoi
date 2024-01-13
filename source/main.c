@@ -111,7 +111,7 @@ int main(void) {
 			//DrawText(mStr, loading_bar_x - loading_bar_width / 2 + loading_bar_width * m / move - MeasureText(mStr, 15) / 2, loading_bar_y + loading_bar_height / 2 + loading_bar_height + 5, 15, BLACK);
 		}
 		if (done) {
-			DrawText("DONE", loading_bar_x - loading_bar_width / 2 - 1 )
+//			DrawText("DONE", loading_bar_x - loading_bar_width / 2 - 1 )
 		}
 		if (m == move) {
 			done = true;

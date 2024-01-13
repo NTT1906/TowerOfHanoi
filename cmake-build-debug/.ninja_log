@@ -85,3 +85,6 @@
 138	531	7268585506526168	HanoiTower.exe	af46ba6739c82abe
 4	41	0	D:/clion/HanoiTower/cmake-build-debug/CMakeFiles/cmake.verify_globs	179f2ce79cd07a9
 5	37	0	D:/clion/HanoiTower/cmake-build-debug/CMakeFiles/cmake.verify_globs	179f2ce79cd07a9
+17	105	0	D:/clion/HanoiTower/cmake-build-debug/CMakeFiles/cmake.verify_globs	179f2ce79cd07a9
+10	993	7268587533205487	CMakeFiles/HanoiTower.dir/source/main.c.obj	fa1ce61d5ec38e3e
+993	2966	7268587551253234	HanoiTower.exe	af46ba6739c82abe
